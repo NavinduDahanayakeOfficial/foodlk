@@ -4,7 +4,7 @@ export class Food{
     price!: number;
     tags?: string[];
     favorite: boolean = false;
-    stars: number = 0;
+    stars!: number;
     imageUrl!: string;
     origins!: string[];
     cookTime!: string;
