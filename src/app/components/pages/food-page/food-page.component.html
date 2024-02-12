@@ -1,1 +1,43 @@
-<div class="container"></div>
+<div class="container">
+    <img [src]="food.imageUrl" [alt]="food.name" >
+
+    <div class="details">
+        <div class="header">
+            <span class="name">
+                {{ food.name }}
+            </span>
+            <span class="favorite {{ food.favorite ? '' : 'not' }}">
+                ❤
+            </span>
+        </div>
+        <div class="rating">
+            <star-rating [stars]="food.stars"></star-rating>
+        </div>
+        <div class="origins">
+            <span *ngFor="let origin of food.origins">
+                {{ origin }}
+            </span>
+        </div>
+        <div class="tags">
+            <a *ngFor="let tag of food.tags" routerLink="/tag/{{tag}}">
+                {{ tag }}
+            </a>
+        </div>
+        <div class="cook-time">
+            <span>
+                Time to cook about <strong>{{ food.cookTime }}</strong> minutes
+            </span>
+        </div>
+        <div class="price">
+            <span> {{food.price | currency: 'Rs.': true: '1.2-2'}}</span>
+        </div>
+
+        <button>Add to cart</button>
+    </div>
+</div>
+
+
+<!-- //Q:why put src inside square brackets?
+//A:Because it is a property binding. We are binding the src attribute of the img tag to the imageUrl property of the food object.
+//  This is how we can dynamically set the src attribute of the img tag based on the imageUrl property of the food object.
+//  If we didn't use square brackets, the src attribute would be set to the string "food.imageUrl" instead of the value of the imageUrl property of the food object. -->
