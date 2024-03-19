@@ -1,12 +1,13 @@
 <app-title title="Cart Page" margin="1.5rem 0 0 2.5rem"></app-title>
 
 
-<div class="container" *ngIf="cart.items.length === 0" style="display:flex; justify-content: center;">
-  <p style=" margin-top: 50px;">    No food found
-  </p>
-</div>
+<app-not-found 
+  [visible]="!cart || !cart.items.length"
+  notFoundMessage="Your cart is empty"
+  resetLinkText="Go to Home"
+></app-not-found>
 
-<div class="container" *ngIf="cart.items.length !== 0">
+<div class="container" *ngIf="cart && cart.items.length>0">
   <ul>
     <li *ngFor="let cartItem of cart.items">
       <div>
