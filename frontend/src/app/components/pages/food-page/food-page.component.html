@@ -1,6 +1,9 @@
-<app-not-found [visible]="!food.id" notFoundMessage="Food Not Found" resetLinkText="Go to Home"></app-not-found>
+<div *ngIf="!food; else foodContent">Loading...</div>
 
-<div class="container" *ngIf="food.id">
+<ng-template #foodContent>
+<app-not-found [visible]="!food" notFoundMessage="Food Not Found" resetLinkText="Go to Home"></app-not-found>
+
+<div class="container" *ngIf="food">
     <img [src]="food.imageUrl" [alt]="food.name" >
 
     <div class="details">
@@ -37,7 +40,7 @@
         <button (click)="addToCart()">Add to cart</button>
     </div>
 </div>
-
+</ng-template>
 
 <!-- //Q:why put src inside square brackets?
 //A:Because it is a property binding. We are binding the src attribute of the img tag to the imageUrl property of the food object.

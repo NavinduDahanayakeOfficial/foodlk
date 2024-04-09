@@ -11,7 +11,9 @@ export class TagsComponent implements OnInit {
  tags: Tag[] = [];
 
  constructor(private FoodService: FoodService) { 
-  this.tags = this.FoodService.getAllTags();
+  this.FoodService.getAllTags().subscribe((serverTags) => {
+    this.tags = serverTags;
+  });
  }
 
  ngOnInit(): void {
