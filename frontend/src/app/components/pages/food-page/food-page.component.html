@@ -34,7 +34,7 @@
             </span>
         </div>
         <div class="price">
-            <span> {{food.price | currency: 'Rs.': true: '1.2-2'}}</span>
+            <span> {{food.price | currency: 'Rs.': 'symbol': '1.2-2'}}</span>
         </div>
 
         <button (click)="addToCart()">Add to cart</button>

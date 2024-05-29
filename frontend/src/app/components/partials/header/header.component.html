@@ -3,11 +3,11 @@
     <a href="#" routerLink="/" class="logo">FoodLK</a>
     <nav>
       <ul>
-        <li>
+        <li *ngIf="!isAuth">
           <a href="#" routerLink="/login" routerLinkActive="active">login</a>
         </li>
-        <li class="menu-container">
-          <a href="#" routerLink="/dashboard" routerLinkActive="active">John</a>
+        <li class="menu-container" *ngIf="isAuth">
+          <a href="#" routerLink="/dashboard" routerLinkActive="active">{{user.name}}</a>
           <div class="menu">
             <a href="#" routerLink="/profile" routerLinkActive="active"
               >Profile</a
@@ -15,7 +15,7 @@
             <a href="#" routerLink="/orders" routerLinkActive="active"
               >Orders</a
             >
-            <a>Logout</a>
+            <a (click)="logout()">Logout</a>
           </div>
         </li>
         <li>
