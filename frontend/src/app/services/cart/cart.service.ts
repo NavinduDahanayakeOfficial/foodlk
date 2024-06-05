@@ -50,6 +50,11 @@ export class CartService {
     return this.cartSubject.asObservable();
   }
 
+  //get the latest value of the cart
+  getCart():Cart{
+    return this.cartSubject.value;
+  }
+
 
 
   private setCardToLocalStorage(): void{
