@@ -3,7 +3,7 @@ export const sample_foods: any[] = [
       id: "1",
       name: "Pizza Pepperoni",
       cookTime: "10-20",
-      price: 1500,
+      price: 15,
       favorite: false,
       origins: ["italy"],
       stars: 4.5,
@@ -13,7 +13,7 @@ export const sample_foods: any[] = [
    {
       id: "2",
       name: "Meatball",
-      price: 950,
+      price: 10,
       cookTime: "20-30",
       favorite: true,
       origins: ["persia", "middle east", "china"],
@@ -24,7 +24,7 @@ export const sample_foods: any[] = [
    {
       id: "3",
       name: "Hamburger",
-      price: 1190,
+      price: 7.50,
       cookTime: "10-15",
       favorite: false,
       origins: ["germany", "us"],
@@ -35,7 +35,7 @@ export const sample_foods: any[] = [
    {
       id: "4",
       name: "Fried Potatoes",
-      price: 560,
+      price: 5,
       cookTime: "15-20",
       favorite: true,
       origins: ["belgium", "france"],
@@ -46,7 +46,7 @@ export const sample_foods: any[] = [
    {
       id: "5",
       name: "Chicken Soup",
-      price: 670,
+      price: 13,
       cookTime: "40-50",
       favorite: false,
       origins: ["india", "asia"],
@@ -57,7 +57,7 @@ export const sample_foods: any[] = [
    {
       id: "6",
       name: "Vegetables Pizza",
-      price: 890,
+      price: 12,
       cookTime: "40-50",
       favorite: false,
       origins: ["italy"],

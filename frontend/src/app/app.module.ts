@@ -28,6 +28,10 @@ import { loadingInterceptor } from './shared/interceptors/loading.interceptor';
 import { CheckoutPageComponent } from './components/pages/checkout-page/checkout-page.component';
 import { OrderItemsListComponent } from './components/partials/order-items-list/order-items-list.component';
 import { MapComponent } from './components/partials/map/map.component';
+import { authInterceptor } from './auth/interceptors/auth.interceptor';
+import { PaymentPageComponent } from './components/pages/payment-page/payment-page.component';
+import { PaypalButtonComponent } from './components/partials/paypal-button/paypal-button.component';
+import { OrderTrackPageComponent } from './components/pages/order-track-page/order-track-page.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +55,9 @@ import { MapComponent } from './components/partials/map/map.component';
     CheckoutPageComponent,
     OrderItemsListComponent,
     MapComponent,
+    PaymentPageComponent,
+    PaypalButtonComponent,
+    OrderTrackPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +71,7 @@ import { MapComponent } from './components/partials/map/map.component';
       newestOnTop: false,
     }),
   ],
-  providers: [provideAnimationsAsync(), provideHttpClient(withInterceptors([loadingInterceptor]))],
+  providers: [provideAnimationsAsync(), provideHttpClient(withInterceptors([authInterceptor, loadingInterceptor]))],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

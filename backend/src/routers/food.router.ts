@@ -8,11 +8,13 @@ const router = express.Router();
 router.get(
    "/seed",
    asyncHandler(async (req, res) => {
-      const foodsCount = await FoodModel.countDocuments();
-      if (foodsCount > 0) {
-         res.send("Seed is already done!");
-         return;
-      }
+      // const foodsCount = await FoodModel.countDocuments();
+      // if (foodsCount > 0) {
+      //    res.send("Seed is already done!");
+      //    return;
+      // }
+
+      await FoodModel.deleteMany({});
 
       await FoodModel.create(sample_foods);
       res.send("Seed is done!");

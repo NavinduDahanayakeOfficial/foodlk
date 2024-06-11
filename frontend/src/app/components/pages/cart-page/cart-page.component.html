@@ -32,7 +32,7 @@
         </select>
       </div>
       <div>
-        {{cartItem.price | currency: 'Rs.': true: '1.2-2' }}
+        {{cartItem.price | currency: 'USD': true: '1.2-2' }}
       </div>
 
       <div>
@@ -46,7 +46,7 @@
   <div class="checkout">
     <div>
         <div class="food-count">{{cart.totalCount}}</div>
-        <div class="total-price">{{cart.totalPrice| currency: 'Rs.': true: '1.2-2'}}</div>
+        <div class="total-price">{{cart.totalPrice| currency: 'USD': true: '1.2-2'}}</div>
     </div>
 
     <a routerLink="/checkout">Proceed to</a>

@@ -7,6 +7,8 @@ import { sample_users } from "../data";
 import { User, UserModel } from "../models/user.model";
 import { HTTP_STATUS } from "../constants/http_status";
 
+
+
 const router = express.Router();
 
 router.get(
@@ -70,8 +72,8 @@ router.post(
 
 const generateTokenResponse = (user: any) => {
    const token = jwt.sign(
-      { email: user.email, isAdmin: user.isAdmin },
-      "secretOfNav",
+      { id: user.id, email: user.email, isAdmin: user.isAdmin },
+      process.env.JWT_SECRET as string,
       { expiresIn: "30d" }
    );
    user = user.toObject();
