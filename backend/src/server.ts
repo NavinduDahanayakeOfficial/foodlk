@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import path from 'path';
 
 import foodRouter from "./routers/food.router";
 import userRouter from "./routers/user.router";
@@ -10,7 +11,7 @@ import { dbConnect } from "./configs/database.config";
 const app = express();
 app.use(express.json());
 
-dotenv.config();
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
 dbConnect();
 
 app.use(
